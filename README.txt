@@ -58,5 +58,5 @@ change or upgrade any of the code, update the test cases with any new
 or changed results but otherwise leave the old ones intact.  Develop as
 before.  If any of your modifications break old code, old test cases will
 reveal that.
-
+----------------------------------------------
 Author: Alexander Hughes <aebhughes@gmail.com>
