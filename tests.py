@@ -1,6 +1,5 @@
 #!/usr/bin/python -tt
 import sys
-from termcolor import colored as coloured #opt extra
 # A framework for simple TDD (Test Driven Development). Test cases for
 # each module are written in the tests() module as part of the *design*
 # and *before* the actual modules themselves are constructed.
@@ -20,6 +19,8 @@ def string1(mys):
     '''Basic skeleton module. Please replace'''
     return mys
 
+fmt_str = '\033[%dm%s\033[0m'
+
 def test(got, expected):
     '''
     Simple (but effective) reporting method called from tests()
@@ -27,9 +28,9 @@ def test(got, expected):
     is a tick or check-mark.
     '''
     if got == expected:
-        prefix = coloured(u"\u2714", 'yellow') #Unicode 'tick/check' mark
+        prefix = fmt_str % (33, u"\u2714")   #Unicode 'tick/check' mark in yellow
     else:
-        prefix = coloured('X', 'red')
+        prefix = fmt_str % (31, u"X")        #Unicode 'X' mark in red
     print '  %s returned: %s expected: %s' % (prefix, repr(got), repr(expected))
 
 
